@@ -134,9 +134,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 </form>
             </div>
         </section>
-                </section>
-
-        <footer>
         <footer>
         <div class="container">
             <p>&copy; 2023 Sistem Administrasi KTP. Semua hak dilindungi.</p>

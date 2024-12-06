@@ -22,5 +22,10 @@
         <input type="submit" value="Daftar">
        </form>
     </div>
+    <footer>
+    <div class="container">
+            <p>&copy; 2023 Sistem Administrasi KTP. Semua hak dilindungi.</p>
+        </div>
+    </footer>
 </body>
 </html>
