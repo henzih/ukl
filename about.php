@@ -26,7 +26,9 @@
     </header>
 <section id="kontak" class="kontak">
             <div class="container">
-                <h2>Hubungi Kami</h2>
+                <p>Helmy Asyraf Risqi Ariebowo biasanya dipanggil Helmy
+dia lahir pada 18 juli 2009 di sidoarjo dia juga seorang pelajar.
+dia sekolah di smk telkom sidoarjo</p>
                 <div class="kontak-info">
                     <p>Email: @gmail.com</p>
                     <p>Telepon: 081-12345678</p>
