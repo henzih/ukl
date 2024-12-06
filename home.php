@@ -18,6 +18,8 @@
                     <li><a href="isi.php">Pendaftaran</a></li>
                     <li><a href="about.php">Kontak</a></li>
                     <li><a href="cs.php">Customer Service</a></li>
+                    <li><a href="login.php">login</a></li>
+                    <li><a href="daftar.php">daftar</a></li>
                 </ul>
             </nav>
         </div>

@@ -18,13 +18,15 @@
                     <li><a href="isi.php">Pendaftaran</a></li>
                     <li><a href="about.php">Kontak</a></li>
                     <li><a href="cs.php">Customer Service</a></li>
+                    <li><a href="login.php">login</a></li>
+                    <li><a href="daftar.php">daftar</a></li>
                 </ul>
             </nav>
         </div>
     </header>
     <div class="container">
         <h2>Berikan Keluhan</h2>
-        <form action="submit_form.php" method="post">
+        <form  method="post">
             <label for="name">Nama:</label>
             <input type="text" id="name" name="name" required>
             <br>
@@ -36,7 +38,6 @@
             <br>
             <button type="submit">Kirim</button>
     <div>
-    </main>
     <footer>
         <div class="container">
             <p>&copy; 2023 Sistem Administrasi KTP. Semua hak dilindungi.</p>

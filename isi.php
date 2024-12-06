@@ -18,6 +18,8 @@
                     <li><a href="isi.php">Pendaftaran</a></li>
                     <li><a href="about.php">Kontak</a></li>
                     <li><a href="cs.php">Customer Service</a></li>
+                    <li><a href="login.php">login</a></li>
+                    <li><a href="daftar.php">daftar</a></li>
                 </ul>
             </nav>
         </div>
@@ -82,13 +84,59 @@
                         <option value="">Pilih Jenis Kelamin</option>
                         <option value="laki">Laki-laki</option>
                         <option value="perempuan">Perempuan</option>
-                    </select><br>
-                    <input type="text" placeholder="masukan foto anda" required><br>
+                    </select><br>       
+                    <form method="post" enctype="multipart/form-data">
+                        <label for="file">Pilih gambar untuk diupload:</label><br>
+                        <input type="file" name="file" id="file" accept="image/*" required>
+                    </form>
+                    <?php
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    $target_dir = "uploads/";
+    $target_file = $target_dir . basename($_FILES["file"]["name"]);
+    $uploadOk = 1;
+    $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
+
+    $check = getimagesize($_FILES["file"]["tmp_name"]);
+    if ($check !== false) {
+        echo "File adalah gambar - " . $check["mime"] . ".";
+        $uploadOk = 1;
+    } else {
+        echo "File bukan gambar.";
+        $uploadOk = 0;
+    }
+
+    if (file_exists($target_file)) {
+        echo "Maaf, file sudah ada.";
+        $uploadOk = 0;
+    }
+
+    if ($_FILES["file"]["size"] > 5000000) {
+        echo "Maaf, ukuran file terlalu besar.";
+        $uploadOk = 0;
+    }
+
+    if ($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg" && $imageFileType != "gif") {
+        echo "Maaf, hanya file JPG, JPEG, PNG & GIF yang diizinkan.";
+        $uploadOk = 0;
+    }
+
+    if ($uploadOk == 1) {
+        if (move_uploaded_file($_FILES["file"]["tmp_name"], $target_file)) {
+            echo "File ". htmlspecialchars(basename($_FILES["file"]["name"])) . " telah diupload.";
+        } else {
+            echo "Maaf, terjadi kesalahan saat mengupload file.";
+        }
+    }
+}
+?>
                     <textarea placeholder="Alamat Lengkap" required></textarea><br>
                     <button type="submit" class="btn">Kirim Pendaftaran</button>
                 </form>
             </div>
         </section>
+                </section>
+
+        <footer>
         <footer>
         <div class="container">
             <p>&copy; 2023 Sistem Administrasi KTP. Semua hak dilindungi.</p>
